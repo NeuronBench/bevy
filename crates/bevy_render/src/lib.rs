@@ -381,6 +381,7 @@ impl Plugin for RenderPlugin {
             let (device, queue, adapter_info, render_adapter, instance) =
                 future_renderer_resources.0.lock().unwrap().take().unwrap();
 
+            eprintln!("ABOUT TO INSERT DEVICE");
             app.insert_resource(device.clone())
                 .insert_resource(queue.clone())
                 .insert_resource(adapter_info.clone())
